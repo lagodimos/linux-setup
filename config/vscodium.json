@@ -24,8 +24,8 @@
 
     "java.configuration.runtimes": [
         {
-            "name": "JavaSE-21",
-            "path": "/run/host/usr/lib/jvm/java-21-openjdk/",
+            "name": "JavaSE-22",
+            "path": "/run/host/usr/lib/jvm/java-22-openjdk/",
             "default": true
         }
     ],
