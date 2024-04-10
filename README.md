@@ -27,6 +27,7 @@ Note: If the `auto_restore_backup` option is enabled in the /config/options.sh f
 
 - Live Preview
 - C/C++ Themes
+- Vim (https://open-vsx.org/extension/vscodevim/vim)
 - Language Support for Java(TM) by Red Hat
 - Python, Pylint, Mypy Type Checker, isort
 - Prettier - Code formatter
