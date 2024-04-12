@@ -151,6 +151,7 @@ case $distro in
             bat
             cpupower
             curl
+            exfat-utils
             ffmpeg
             flatpak
             fzf
