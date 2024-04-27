@@ -165,6 +165,7 @@ case $distro in
             net-tools
             nmap
             nodejs npm
+            ollama
             plocate
             podman podman-compose
             python3 pypy3
