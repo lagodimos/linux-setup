@@ -58,6 +58,7 @@ case $distro in
             alacritty
             bat
             curl
+            distrobox
             ffmpeg
             flatpak
             fzf
@@ -151,6 +152,7 @@ case $distro in
             bat
             cpupower
             curl
+            distrobox
             exfat-utils
             ffmpeg
             flatpak
