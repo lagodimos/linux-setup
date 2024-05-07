@@ -6,4 +6,5 @@ hh () {     # History Search
     command=$(history -w /dev/stdout | fzf --tac)
     read -e -p "${PS1@P}" -i "$command" command
     eval "$command"
+    unset command
 }
