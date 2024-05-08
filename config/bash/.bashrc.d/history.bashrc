@@ -1,4 +1,6 @@
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export HISTSIZE=20000
+export HISTFILESIZE=20000
 HISTCONTROL=ignoreboth
 shopt -s histappend
 
