@@ -10,7 +10,7 @@ hh () {     # History Search
 
     history -d $((HISTCMD-1))
 
-    if [[ ! -z "$HISTFILE" && ! -z "$command" && ! "$command" == "hh"*]]; then
+    if [[ ! -z "$HISTFILE" && ! -z "$command" && ! "$command" == "hh"* ]]; then
         echo $command >> $HISTFILE
     fi
 
