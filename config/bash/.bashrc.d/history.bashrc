@@ -5,12 +5,12 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 hh () {     # History Search
-    command=$(history -w /dev/stdout | fzf --tac)
-    read -e -p "${PS1@P}" -i "$command" command
-
     history -d $((HISTCMD-1))
 
-    if [[ ! -z "$HISTFILE" && ! -z "$command" && ! "$command" == "hh"* ]]; then
+    command=$(cat $HISTFILE | fzf --tac)
+    read -e -p "${PS1@P}" -i "$command" command
+
+    if [[ ! -z "$HISTFILE" && ! -z "$command" && ! "$command" == "$FUNCNAME"* ]]; then
         echo $command >> $HISTFILE
     fi
 
