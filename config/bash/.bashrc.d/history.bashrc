@@ -11,7 +11,7 @@ hh () {     # History Search
     read -e -p "${PS1@P}" -i "$command" command
 
     if [[ ! -z "$HISTFILE" && ! -z "$command" && ! "$command" == "$FUNCNAME"* ]]; then
-        echo $command >> $HISTFILE
+        echo "$command" >> $HISTFILE
     fi
 
     if [[ ! -z "$STARSHIP_SHELL" ]]; then
