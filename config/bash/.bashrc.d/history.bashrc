@@ -11,15 +11,15 @@ hh () {     # History Search
     read -e -p "${PS1@P}" -i "$command" command
 
     if [[
-        ! -z "$HISTFILE" &&
-        ! -z "$command" &&
+        -n "$HISTFILE" &&
+        -n "$command" &&
         "$command" != "$FUNCNAME" &&
         "$command" != "$FUNCNAME "*
     ]]; then
         echo "$command" >> $HISTFILE
     fi
 
-    if [[ ! -z "$STARSHIP_SHELL" ]]; then
+    if [[ -n "$STARSHIP_SHELL" ]]; then
         STARSHIP_START_TIME=$(date +%s%3N)
     fi
 
