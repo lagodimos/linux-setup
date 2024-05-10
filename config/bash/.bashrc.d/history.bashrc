@@ -10,7 +10,12 @@ hh () {     # History Search
     command=$(cat $HISTFILE | fzf --tac)
     read -e -p "${PS1@P}" -i "$command" command
 
-    if [[ ! -z "$HISTFILE" && ! -z "$command" && ! "$command" == "$FUNCNAME"* ]]; then
+    if [[
+        ! -z "$HISTFILE" &&
+        ! -z "$command" &&
+        "$command" != "$FUNCNAME" &&
+        "$command" != "$FUNCNAME "*
+    ]]; then
         echo "$command" >> $HISTFILE
     fi
 
