@@ -154,6 +154,7 @@ case $distro in
             curl
             distrobox
             exfat-utils
+            fastfetch
             ffmpeg
             flatpak
             fzf
