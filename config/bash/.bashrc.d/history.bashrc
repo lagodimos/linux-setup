@@ -1,7 +1,7 @@
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export HISTSIZE=20000
 export HISTFILESIZE=20000
-HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 shopt -s histappend
 
 hh () {     # History Search
@@ -10,6 +10,8 @@ hh () {     # History Search
     command=$(cat $HISTFILE | fzf --tac)
 
     if [[ -n "$command" ]]; then
+
+        # Allow editing
         read -e -r -p "${PS1@P}" -i "$command" command
 
         if [[
