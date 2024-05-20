@@ -7,7 +7,7 @@ shopt -s histappend
 hh () {     # History Search
     history -d $((HISTCMD-1))
 
-    command=$(cat $HISTFILE | fzf --tac)
+    command=$(cat -n $HISTFILE | tac | sort -uk2 | sort -nk1 | cut -f2- | fzf --tac)
 
     if [[ -n "$command" ]]; then
 
