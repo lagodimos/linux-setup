@@ -145,6 +145,7 @@ case $distro in
 
         packages=(
             linux-lts
+            usbutils
 
             android-tools
             alacritty starship ttf-firacode-nerd noto-fonts-emoji
