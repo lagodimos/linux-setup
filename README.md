@@ -26,12 +26,11 @@ Note: If the `auto_restore_backup` option is enabled in the /config/options.sh f
 ### VSCodium Extensions
 
 - Live Preview
-- C/C++ Themes
+- clangd
+- rust-analyzer
 - Vim (https://open-vsx.org/extension/vscodevim/vim)
-- Language Support for Java(TM) by Red Hat
 - Python, Pylint, Mypy Type Checker, isort
 - Prettier - Code formatter
-- rust-analyzer
 - Even Better TOML
 
 - Compare Folders

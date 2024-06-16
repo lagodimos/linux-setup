@@ -20,16 +20,6 @@
         }
     },
 
-    "redhat.telemetry.enabled": false,
-
-    "java.configuration.runtimes": [
-        {
-            "name": "JavaSE-22",
-            "path": "/run/host/usr/lib/jvm/java-22-openjdk/",
-            "default": true
-        }
-    ],
-
     "latex-workshop.latex.tools": [
         {
             "name": "latexmk",
