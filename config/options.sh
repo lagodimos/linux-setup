@@ -39,10 +39,10 @@ case $DE in
     flatpaks+=(
         io.github.celluloid_player.Celluloid
         io.gitlab.news_flash.NewsFlash
-        org.gnome.Evince
         org.gnome.Fractal
         org.gnome.Geary
         org.gnome.Loupe
+        org.gnome.Papers
         org.gnome.Snapshot
     )
     ;;
