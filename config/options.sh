@@ -60,6 +60,7 @@ case $distro in
             curl
             distrobox
             ffmpeg
+            ffmpegthumbnailer
             flatpak
             fzf
             gh
@@ -94,7 +95,6 @@ case $distro in
             "gnome")
 
                 packages+=(
-                    ffmpegthumbnailer   # Replacement for totem-video-thumbnailer
                 )
 
                 packages_remove+=(
@@ -157,6 +157,7 @@ case $distro in
             exfat-utils
             fastfetch
             ffmpeg
+            ffmpegthumbnailer
             flatpak
             fzf
             github-cli
@@ -200,8 +201,6 @@ case $distro in
                     gnome-system-monitor
                     gnome-text-editor
                     nautilus gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
-
-                    ffmpegthumbnailer   # Replacement for totem-video-thumbnailer
                 )
                 ;;
 
