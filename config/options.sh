@@ -56,7 +56,6 @@ case $distro in
 
         packages=(
             adb fastboot
-            alacritty
             bat
             curl
             distrobox
@@ -149,7 +148,6 @@ case $distro in
             usbutils
 
             android-tools
-            alacritty starship ttf-firacode-nerd noto-fonts-emoji
             bash-completion
             bat
             cpupower
@@ -177,6 +175,7 @@ case $distro in
             python3 pypy3
             qemu-base virt-manager dnsmasq
             rsync
+            starship ttf-firacode-nerd noto-fonts-emoji
             smartmontools
             timeshift
             tldr
