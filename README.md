@@ -25,6 +25,7 @@ Note: If the `auto_restore_backup` option is enabled in the /config/options.sh f
 
 ### Gnome Extensions
 - ddterm
+- Bluetooth battery indicator
 
 ### VSCodium Extensions
 
