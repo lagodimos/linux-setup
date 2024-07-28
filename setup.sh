@@ -115,10 +115,6 @@ sh <(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs) -y --no-modify-p
 
 # .config files (not from backup)
 
-# Alacritty
-mkdir -p ~/.config/alacritty/
-cp $LOC/config/alacritty.toml ~/.config/alacritty/
-
 # Configure Flatpak
 if [[ " ${packages[*]} " =~ " flatpak " ]]; then
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
