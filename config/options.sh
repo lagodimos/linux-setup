@@ -29,6 +29,7 @@ flatpaks=(  # Requires flatpak to be installed (make sure to include it in your 
     org.libreoffice.LibreOffice
     org.localsend.localsend_app
     org.qbittorrent.qBittorrent
+    #org.texstudio.TeXstudio org.freedesktop.Sdk.Extension.texlive//$latest_freedesktop_sdk_version
 
     com.discordapp.Discord
 )
