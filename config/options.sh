@@ -76,7 +76,7 @@ case $distro in
             nmap
             nodejs npm
             plocate
-            podman podman-compose
+            podman podman-compose fuse-overlayfs
             python3 python3-venv python-is-python3 pypy3
             qemu-system-x86 virt-manager qemu-utils
             rsync
