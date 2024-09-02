@@ -123,13 +123,6 @@ if [[ " ${packages[*]} " =~ " flatpak " ]]; then
     # VSCodium
     cp $LOC/config/vscodium.json ~/.var/app/com.vscodium.codium/config/VSCodium/User/settings.json
     flatpak --user override com.vscodium.codium --env=PATH=/app/bin:/usr/bin:/home/$USER/.cargo/bin
-
-    if [[ "$distro" == "debian" ]]; then
-        # Firefox/Librewolf flatpak workaround for some fonts. It's fixed on debian testing (trixie). Github issue: https://github.com/flatpak/flatpak/issues/4571
-        mkdir -p ~/.var/app/io.gitlab.librewolf-community/config/fontconfig/conf.d
-        rm -rf ~/.var/app/io.gitlab.librewolf-community/config/fontconfig/conf.d/*
-        cp /etc/fonts/conf.d/*.conf ~/.var/app/io.gitlab.librewolf-community/config/fontconfig/conf.d
-    fi
 fi
 
 if [[ "$auto_restore_backup" == true ]]; then
