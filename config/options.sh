@@ -41,6 +41,7 @@ case $DE in
         com.mattjakeman.ExtensionManager
         io.github.celluloid_player.Celluloid
         io.gitlab.news_flash.NewsFlash
+        net.nokyan.Resources
         org.gnome.Fractal
         org.gnome.Geary
         org.gnome.Loupe
@@ -125,7 +126,7 @@ case $distro in
                     gnome-shell-extensions  # Default extensions
                     #gnome-shell-extension-prefs # Tool to manage extensions
                     gnome-sound-recorder
-                    #gnome-system-monitor
+                    gnome-system-monitor
                     gnome-terminal
                     #gnome-text-editor
                     gnome-weather
@@ -199,7 +200,6 @@ case $distro in
                     file-roller
                     gnome-control-center
                     gnome-disk-utility
-                    gnome-system-monitor
                     gnome-text-editor
                     nautilus gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
                 )
