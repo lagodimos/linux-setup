@@ -110,7 +110,7 @@ case $distro in
                     eog
                     evince
                     evolution
-                    #file-roller
+                    file-roller
                     #gnome-backgrounds
                     gnome-calendar
                     gnome-characters
@@ -197,7 +197,6 @@ case $distro in
                     xdg-desktop-portal-gnome
                     gnome-tweaks gnome-themes-extra
 
-                    file-roller
                     gnome-control-center
                     gnome-disk-utility
                     gnome-text-editor
