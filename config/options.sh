@@ -40,76 +40,24 @@ flatpaks=(  # Requires flatpak to be installed (make sure to include it in your 
 
 case $DE in
 
-"gnome")
-    flatpaks+=(
-        com.mattjakeman.ExtensionManager
-        io.github.celluloid_player.Celluloid
-        io.gitlab.news_flash.NewsFlash
-        net.nokyan.Resources
-        org.gnome.Fractal
-        org.gnome.Geary
-        org.gnome.Loupe
-        org.gnome.Papers
-        org.gnome.Snapshot
-    )
-    ;;
+    "gnome")
+
+        flatpaks+=(
+            com.mattjakeman.ExtensionManager
+            io.github.celluloid_player.Celluloid
+            io.gitlab.news_flash.NewsFlash
+            net.nokyan.Resources
+            org.gnome.Fractal
+            org.gnome.Geary
+            org.gnome.Loupe
+            org.gnome.Papers
+            org.gnome.Snapshot
+        )
+        ;;
 
 esac
 
 case $distro in
-
-    "debian")
-
-        packages=(
-            adb fastboot
-            bat
-            curl
-            distrobox
-            ffmpeg
-            ffmpegthumbnailer
-            flatpak
-            fzf
-            gh
-            git
-            jpegoptim optipng
-            texlive-latex-base texlive-latex-recommended texlive-fonts-recommended latexmk texlive-lang-greek
-            less
-            linux-cpupower
-            lm-sensors
-            mingw-w64
-            net-tools
-            nmap
-            nodejs npm
-            plocate
-            podman podman-compose fuse-overlayfs
-            python3 python3-venv python-is-python3 pypy3
-            qemu-system-x86 virt-manager qemu-utils
-            rsync
-            smartmontools
-            timeshift
-            tldr
-            trash-cli
-            ufw
-            wget
-            wine
-            zoxide
-        )
-
-        case $DE in
-
-            "gnome")
-
-                packages+=(
-                    gdm3 gnome-shell
-
-                    gnome-disk-utility
-                    gnome-text-editor
-                    nautilus
-                )
-                ;;
-
-        esac
-        ;;
 
     "arch")
 
@@ -168,6 +116,59 @@ case $distro in
                     gnome-disk-utility
                     gnome-text-editor
                     nautilus gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
+                )
+                ;;
+
+        esac
+        ;;
+
+    "debian")
+
+        packages=(
+            adb fastboot
+            bat
+            curl
+            distrobox
+            ffmpeg
+            ffmpegthumbnailer
+            flatpak
+            fzf
+            gh
+            git
+            jpegoptim optipng
+            texlive-latex-base texlive-latex-recommended texlive-fonts-recommended latexmk texlive-lang-greek
+            less
+            linux-cpupower
+            lm-sensors
+            mingw-w64
+            net-tools
+            nmap
+            nodejs npm
+            plocate
+            podman podman-compose fuse-overlayfs
+            python3 python3-venv python-is-python3 pypy3
+            qemu-system-x86 virt-manager qemu-utils
+            rsync
+            smartmontools
+            timeshift
+            tldr
+            trash-cli
+            ufw
+            wget
+            wine
+            zoxide
+        )
+
+        case $DE in
+
+            "gnome")
+
+                packages+=(
+                    gdm3 gnome-shell
+
+                    gnome-disk-utility
+                    gnome-text-editor
+                    nautilus
                 )
                 ;;
 
