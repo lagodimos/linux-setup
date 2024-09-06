@@ -6,6 +6,10 @@ distros=(
 )
 
 # Common options
+
+# The desktop environment is installed
+# by the script. Do not select any
+# during the OS installation.
 DE="gnome"
 
 set_governor="true"
@@ -90,53 +94,17 @@ case $distro in
             wine
             zoxide
         )
-        packages_remove=()
 
         case $DE in
 
             "gnome")
 
                 packages+=(
-                )
+                    gdm3 gnome-shell
 
-                packages_remove+=(
-                    firefox-esr
-                    libreoffice-common
-                    synaptic
-                    transmission-common
-
-                    baobab
-                    cheese
-                    eog
-                    evince
-                    evolution
-                    file-roller
-                    #gnome-backgrounds
-                    gnome-calendar
-                    gnome-characters
-                    gnome-clocks
-                    gnome-contacts
-                    #gnome-control-center
-                    #gnome-disk-utility
-                    gnome-font-viewer
-                    gnome-games
-                    gnome-logs
-                    gnome-maps
-                    gnome-music
-                    gnome-shell-extensions  # Default extensions
-                    #gnome-shell-extension-prefs # Tool to manage extensions
-                    gnome-sound-recorder
-                    gnome-system-monitor
-                    gnome-terminal
-                    #gnome-text-editor
-                    gnome-weather
-                    #nautilus
-                    rhythmbox
-                    seahorse
-                    shotwell
-                    simple-scan
-                    totem
-                    yelp
+                    gnome-disk-utility
+                    gnome-text-editor
+                    nautilus
                 )
                 ;;
 
@@ -186,7 +154,6 @@ case $distro in
             wget
             zoxide
         )
-        packages_remove=()
 
         case $DE in
 

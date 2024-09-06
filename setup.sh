@@ -79,7 +79,6 @@ case $distro in
     cp $LOC/res/debian/bat.bashrc ~/.bashrc.d
 
     sudo apt-get update
-    sudo apt-get purge -y --autoremove ${packages_remove[@]}
     sudo apt-get upgrade -y
     sudo apt-get install -y ${packages[@]}
     sudo apt-get clean
