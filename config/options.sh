@@ -112,6 +112,7 @@ case $distro in
                     xdg-desktop-portal-gnome
                     gnome-tweaks gnome-themes-extra
 
+                    gnome-console
                     gnome-control-center
                     gnome-disk-utility
                     gnome-text-editor
@@ -166,6 +167,7 @@ case $distro in
                 packages+=(
                     gdm3 gnome-shell
 
+                    gnome-console
                     gnome-disk-utility
                     gnome-text-editor
                     nautilus
