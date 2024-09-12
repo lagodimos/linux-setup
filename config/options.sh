@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-distros=(
-    arch
-    debian
-)
-
 # Common options
 
 # The desktop environment is installed

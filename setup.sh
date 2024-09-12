@@ -26,14 +26,9 @@ configure_ufw () {
 # Location of script
 LOC=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-distro=$1
+distro=$(. /etc/os-release; echo $ID)
 
 source $LOC/config/options.sh
-
-# Verify arguments
-if [[ $# != 1 ]] || [[ ! " ${distros[*]} " =~ " ${distro} " ]]; then
-    exit
-fi
 
 # Exit if script is being run as root
 if [[ "`whoami`" == "root" ]]; then
@@ -92,6 +87,11 @@ case $distro in
         sudo systemctl enable --now cpupower.service
     fi
 
+    ;;
+
+*)
+    echo "Unavailable distribution ID: $distro"
+    exit
     ;;
 
 esac
