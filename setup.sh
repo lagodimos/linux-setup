@@ -44,55 +44,53 @@ sudo true
 # packages are installed before further changes.
 case $distro in
 
-"arch")
+    "arch")
 
-    sudo pacman -Syu --noconfirm
-    sudo pacman -S --needed --noconfirm ${packages[@]}
+        sudo pacman -Syu --noconfirm
+        sudo pacman -S --needed --noconfirm ${packages[@]}
 
-    sudo systemctl enable --now virtqemud
-    sudo systemctl enable gdm
+        sudo systemctl enable --now virtqemud
+        sudo systemctl enable gdm
 
-    configure_ufw
+        configure_ufw
 
-    if [[ "$set_governor" == true ]]; then
-        sudo sed -i "/governor=/c governor=\"$cpu_governor\"" /etc/default/cpupower
-        sudo systemctl enable --now cpupower.service
-    fi
+        if [[ "$set_governor" == true ]]; then
+            sudo sed -i "/governor=/c governor=\"$cpu_governor\"" /etc/default/cpupower
+            sudo systemctl enable --now cpupower.service
+        fi
 
-    grub_default_arch="\"Advanced options for Arch Linux>Arch Linux, with Linux linux\""
-    sudo sed -i "/GRUB_DEFAULT=/c GRUB_DEFAULT=$grub_default_arch" /etc/default/grub
-    sudo grub-mkconfig -o /boot/grub/grub.cfg
+        grub_default_arch="\"Advanced options for Arch Linux>Arch Linux, with Linux linux\""
+        sudo sed -i "/GRUB_DEFAULT=/c GRUB_DEFAULT=$grub_default_arch" /etc/default/grub
+        sudo grub-mkconfig -o /boot/grub/grub.cfg
+        ;;
 
-    ;;
+    "debian")
 
-"debian")
+        # The bat executable have been renamed from ‘bat’ to ‘batcat’
+        # because of a file name clash with another Debian package,
+        # so an alias is necessary to use bat with the regular command.
+        mkdir -p ~/.bashrc.d
+        cp $LOC/res/debian/bat.bashrc ~/.bashrc.d
 
-    # The bat executable have been renamed from ‘bat’ to ‘batcat’
-    # because of a file name clash with another Debian package,
-    # so an alias is necessary to use bat with the regular command.
-    mkdir -p ~/.bashrc.d
-    cp $LOC/res/debian/bat.bashrc ~/.bashrc.d
+        sudo apt-get update
+        sudo apt-get upgrade -y
+        sudo apt-get install -y ${packages[@]}
+        sudo apt-get clean
 
-    sudo apt-get update
-    sudo apt-get upgrade -y
-    sudo apt-get install -y ${packages[@]}
-    sudo apt-get clean
+        configure_ufw
 
-    configure_ufw
+        if [[ "$set_governor" == true ]]; then
+            sudo cp $LOC/res/cpupower.service /etc/systemd/system
+            sudo sed -i "s/cpu_governor/$cpu_governor/g" /etc/systemd/system/cpupower.service
 
-    if [[ "$set_governor" == true ]]; then
-        sudo cp $LOC/res/cpupower.service /etc/systemd/system
-        sudo sed -i "s/cpu_governor/$cpu_governor/g" /etc/systemd/system/cpupower.service
+            sudo systemctl enable --now cpupower.service
+        fi
+        ;;
 
-        sudo systemctl enable --now cpupower.service
-    fi
-
-    ;;
-
-*)
-    echo "Unavailable distribution ID: $distro"
-    exit
-    ;;
+    *)
+        echo "Unavailable distribution ID: $distro"
+        exit
+        ;;
 
 esac
 
