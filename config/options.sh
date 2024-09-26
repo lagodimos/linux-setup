@@ -63,6 +63,7 @@ case $distro in
             usbutils
 
             efibootmgr
+            sbctl
 
             android-tools
             bash-completion
