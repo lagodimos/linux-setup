@@ -58,12 +58,13 @@ case $distro in
 
         packages=(
             linux-lts
+            cpupower
+            lm_sensors
             usbutils
 
             android-tools
             bash-completion
             bat
-            cpupower
             curl
             distrobox
             exfat-utils
@@ -77,7 +78,6 @@ case $distro in
             jpegoptim optipng
             texlive-basic texlive-binextra texlive-latexrecommended texlive-fontsrecommended texlive-langgreek
             less
-            lm_sensors
             mingw-w64
             net-tools
             nmap
@@ -121,6 +121,9 @@ case $distro in
     "debian")
 
         packages=(
+            linux-cpupower
+            lm-sensors
+
             adb fastboot
             bat
             curl
@@ -134,8 +137,6 @@ case $distro in
             jpegoptim optipng
             texlive-latex-base texlive-latex-recommended texlive-fonts-recommended latexmk texlive-lang-greek
             less
-            linux-cpupower
-            lm-sensors
             mingw-w64
             net-tools
             nmap
