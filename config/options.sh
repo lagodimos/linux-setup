@@ -62,6 +62,8 @@ case $distro in
             lm_sensors
             usbutils
 
+            efibootmgr
+
             android-tools
             bash-completion
             bat
@@ -123,6 +125,8 @@ case $distro in
         packages=(
             linux-cpupower
             lm-sensors
+
+            efibootmgr
 
             adb fastboot
             bat
