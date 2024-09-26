@@ -157,7 +157,6 @@ case $distro in
             trash-cli
             ufw
             wget
-            wine
             zoxide
         )
 
