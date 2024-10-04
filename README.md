@@ -7,7 +7,7 @@ Clone the repo and make the scripts executable:
 
 then launch the script by running:
 
-    bash ./setup.sh <name_of_distro>
+    bash ./setup.sh
 
 ### Backup
 To make a backup of your apps (including flatpaks) execute the backup.sh script which stores the data in /config/app-data.
