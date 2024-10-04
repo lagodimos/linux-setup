@@ -38,6 +38,8 @@ fi
 # Ask for root privileges
 sudo true
 
+mkdir -p ~/.bashrc.d
+
 ##### Distro-specific configuration #####
 
 # We need this first to ensure that all the required
@@ -69,7 +71,6 @@ case $distro in
         # The bat executable have been renamed from ‘bat’ to ‘batcat’
         # because of a file name clash with another Debian package,
         # so an alias is necessary to use bat with the regular command.
-        mkdir -p ~/.bashrc.d
         cp $LOC/res/debian/bat.bashrc ~/.bashrc.d
 
         sudo apt-get update
