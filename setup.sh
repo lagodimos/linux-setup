@@ -39,10 +39,6 @@ case $distro in
             sudo sed -i "/governor=/c governor=\"$cpu_governor\"" /etc/default/cpupower
             sudo systemctl enable --now cpupower.service
         fi
-
-        grub_default_arch="\"Advanced options for Arch Linux>Arch Linux, with Linux linux\""
-        sudo sed -i "/GRUB_DEFAULT=/c GRUB_DEFAULT=$grub_default_arch" /etc/default/grub
-        sudo grub-mkconfig -o /boot/grub/grub.cfg
         ;;
 
     "debian")
