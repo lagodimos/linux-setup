@@ -15,7 +15,7 @@ upgrade () {
         upgrade_cmd+="apt-get autoremove --purge --assume-yes;"
     fi
 
-    run0 bash -c "$upgrade_cmd" && \
+    $ESCALATION_TOOL bash -c "$upgrade_cmd" && \
 
     if flatpak --version &> /dev/null; then
         flatpak upgrade --assumeyes

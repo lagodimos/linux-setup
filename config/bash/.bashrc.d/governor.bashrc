@@ -1,3 +1,3 @@
 governor () {
-    run0 cpupower frequency-set -g $1
+    $ESCALATION_TOOL cpupower frequency-set -g $1
 }
