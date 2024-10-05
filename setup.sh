@@ -5,24 +5,6 @@
 
 latest_freedesktop_sdk_version="23.08"
 
-configure_ufw () {
-    echo "Configuring firewall..."
-
-    sudo ufw default deny incoming  # Default Rules
-    sudo ufw default allow outgoing
-
-    sudo ufw allow http
-    sudo ufw allow https
-
-    sudo ufw limit ssh
-
-    sudo ufw allow 53317    # LocalSend
-
-    sudo ufw enable
-}
-
-# -------------------------- Start of script --------------------------
-
 # Location of script
 LOC=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
@@ -54,7 +36,7 @@ case $distro in
         sudo systemctl enable --now virtqemud
         sudo systemctl enable gdm
 
-        configure_ufw
+        sudo bash ./modules/configure_ufw.sh
 
         if [[ "$set_governor" == true ]]; then
             sudo sed -i "/governor=/c governor=\"$cpu_governor\"" /etc/default/cpupower
@@ -78,7 +60,7 @@ case $distro in
         sudo apt-get install -y ${packages[@]}
         sudo apt-get clean
 
-        configure_ufw
+        sudo bash ./modules/configure_ufw.sh
 
         if [[ "$set_governor" == true ]]; then
             sudo cp $LOC/res/cpupower.service /etc/systemd/system
