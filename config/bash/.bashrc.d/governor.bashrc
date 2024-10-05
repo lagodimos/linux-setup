@@ -1,3 +1,3 @@
 governor () {
-    sudo cpupower frequency-set -g $1
+    run0 cpupower frequency-set -g $1
 }
