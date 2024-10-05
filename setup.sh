@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Check current cpu governor
-# cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
-
 latest_freedesktop_sdk_version="23.08"
 
 # Location of script
