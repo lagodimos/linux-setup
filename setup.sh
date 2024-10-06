@@ -32,7 +32,10 @@ case $distro in
         privileged_cmd+="pacman -S --needed --noconfirm ${packages[@]};"
 
         privileged_cmd+="systemctl enable --now virtqemud;"
-        privileged_cmd+="systemctl enable gdm;"
+
+        if [[ "$DE" == "gnome" ]]; then
+            privileged_cmd+="systemctl enable gdm;"
+        fi
 
         privileged_cmd+="bash ./modules/configure_ufw.sh;"
 
