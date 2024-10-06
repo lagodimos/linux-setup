@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-latest_freedesktop_sdk_version="23.08"
+latest_freedesktop_sdk_version="24.08"
 
 # Location of script
 LOC=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
