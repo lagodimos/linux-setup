@@ -41,13 +41,13 @@ case $DE in
 
         flatpaks+=(
             com.mattjakeman.ExtensionManager
-            io.github.celluloid_player.Celluloid
             io.gitlab.news_flash.NewsFlash
             net.nokyan.Resources
             org.gnome.Fractal
             org.gnome.Geary
             org.gnome.Loupe
             org.gnome.Papers
+            org.gnome.Showtime
             org.gnome.Snapshot
         )
         ;;
