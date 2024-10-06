@@ -14,8 +14,6 @@ if [[ "`whoami`" == "root" ]]; then
     echo -e "Please do NOT run the script as root."
     exit
 fi
-# Ask for root privileges
-sudo true
 
 mkdir -p ~/.bashrc.d
 
@@ -23,21 +21,26 @@ mkdir -p ~/.bashrc.d
 
 # We need this first to ensure that all the required
 # packages are installed before further changes.
+
+privileged_cmd=""
+
 case $distro in
 
     "arch")
 
-        sudo pacman -Syu --noconfirm
-        sudo pacman -S --needed --noconfirm ${packages[@]}
+        privileged_cmd+="pacman -Syu --noconfirm;"
+        privileged_cmd+="pacman -S --needed --noconfirm ${packages[@]};"
 
-        sudo systemctl enable --now virtqemud
-        sudo systemctl enable gdm
+        privileged_cmd+="systemctl enable --now virtqemud;"
+        privileged_cmd+="systemctl enable gdm;"
 
-        sudo bash ./modules/configure_ufw.sh
+        privileged_cmd+="bash ./modules/configure_ufw.sh;"
 
         if [[ "$set_governor" == true ]]; then
-            sudo sed -i "/governor=/c governor=\"$cpu_governor\"" /etc/default/cpupower
-            sudo systemctl enable --now cpupower.service
+            sed_script="/governor=/c governor=\"$cpu_governor\""
+
+            privileged_cmd+="sed -i '$sed_script' /etc/default/cpupower;"
+            privileged_cmd+="systemctl enable --now cpupower.service;"
         fi
         ;;
 
@@ -48,18 +51,20 @@ case $distro in
         # so an alias is necessary to use bat with the regular command.
         cp $LOC/res/debian/bat.bashrc ~/.bashrc.d
 
-        sudo apt-get update
-        sudo apt-get upgrade -y
-        sudo apt-get install -y ${packages[@]}
-        sudo apt-get clean
+        privileged_cmd+="apt-get update;"
+        privileged_cmd+="apt-get upgrade -y;"
+        privileged_cmd+="apt-get install -y ${packages[@]};"
+        privileged_cmd+="apt-get clean;"
 
-        sudo bash ./modules/configure_ufw.sh
+        privileged_cmd+="bash ./modules/configure_ufw.sh;"
 
         if [[ "$set_governor" == true ]]; then
-            sudo cp $LOC/res/cpupower.service /etc/systemd/system
-            sudo sed -i "s/cpu_governor/$cpu_governor/g" /etc/systemd/system/cpupower.service
+            sed_script="s/cpu_governor/$cpu_governor/g"
 
-            sudo systemctl enable --now cpupower.service
+            privileged_cmd+="cp $LOC/res/cpupower.service /etc/systemd/system;"
+            privileged_cmd+="sed -i '$sed_script' /etc/systemd/system/cpupower.service;"
+
+            privileged_cmd+="systemctl enable --now cpupower.service;"
         fi
         ;;
 
@@ -69,6 +74,8 @@ case $distro in
         ;;
 
 esac
+
+sudo bash -c "$privileged_cmd"
 
 ##### General configuration #####
 
