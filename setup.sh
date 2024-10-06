@@ -75,7 +75,7 @@ case $distro in
 
 esac
 
-sudo bash -c "$privileged_cmd"
+$escalation_tool bash -c "$privileged_cmd"
 
 ##### General configuration #####
 

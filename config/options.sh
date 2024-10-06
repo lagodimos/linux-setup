@@ -2,6 +2,8 @@
 
 # Common options
 
+escalation_tool="run0"
+
 # The desktop environment is installed
 # by the script. Do not select any
 # during the OS installation.
