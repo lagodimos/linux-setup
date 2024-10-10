@@ -64,6 +64,11 @@ case $distro in
             lm_sensors
             usbutils
 
+            # file systems
+            dosfstools
+            exfatprogs
+
+            # uefi
             efibootmgr
             sbctl
 
@@ -72,8 +77,6 @@ case $distro in
             bat
             curl
             distrobox
-            dosfstools
-            exfatprogs
             fastfetch
             ffmpeg
             ffmpegthumbnailer
