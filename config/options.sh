@@ -72,7 +72,7 @@ case $distro in
             bat
             curl
             distrobox
-            exfat-utils
+            exfatprogs
             fastfetch
             ffmpeg
             ffmpegthumbnailer
