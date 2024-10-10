@@ -72,6 +72,7 @@ case $distro in
             bat
             curl
             distrobox
+            dosfstools
             exfatprogs
             fastfetch
             ffmpeg
