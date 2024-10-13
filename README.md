@@ -43,3 +43,14 @@ Note: If the `auto_restore_backup` option is enabled in the /config/options.sh f
 
 - Code Spell Checker
 - Greek - Code Spell Checker
+
+## Arch installation script
+- Create the partitions (e.g. using cfdisk)
+
+- Download the script
+
+      curl -O https://raw.githubusercontent.com/lagodimos/linux-setup/refs/heads/master/scripts/install_arch.sh
+
+- Run and pass the partitions with the following order
+
+      . ./install_arch.sh /dev/*boot* /dev/*root* /dev/*home*
