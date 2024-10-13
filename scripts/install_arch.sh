@@ -3,8 +3,8 @@
 kernel_params="rw loglevel=3 quiet"
 
 kernels=(
-    linux
     linux-lts
+    linux
 )
 
 packages=(
