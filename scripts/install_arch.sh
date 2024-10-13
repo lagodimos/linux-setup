@@ -89,3 +89,7 @@ do
     --loader "/vmlinuz-$kernel" \
     --unicode "root=UUID=$root_uuid $kernel_params initrd=\initramfs-$kernel.img"
 done
+
+umount "$root/boot"
+umount "$root/home"
+umount "$root"
