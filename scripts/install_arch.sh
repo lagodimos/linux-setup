@@ -16,8 +16,8 @@ packages=(
 
 packages=(${packages[@]} ${kernels[@]})
 
-root_partition=$1
-boot_partition=$2
+boot_partition=$1
+root_partition=$2
 home_partition=$3
 
 disk_of_partition () {
