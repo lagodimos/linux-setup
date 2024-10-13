@@ -43,8 +43,6 @@ partition_fs_uuid () {
 
 root="/archinstall"
 
-root_uuid=$(partition_fs_uuid $root_partition)
-
 boot_partition_num=$(partition_num $boot_partition)
 boot_disk=$(disk_of_partition $boot_partition)
 
@@ -56,6 +54,8 @@ if [[ -z "$(partition_fs_type $home_partition)" ]]; then
 fi
 
 parted "$boot_disk" "set $boot_partition_num boot on"
+
+root_uuid=$(partition_fs_uuid $root_partition)
 
 mkdir -p "$root"
 mount "$root_partition" "$root"
