@@ -115,6 +115,7 @@ case $distro in
                     gdm gnome-shell gnome-backgrounds
                     xdg-desktop-portal-gnome
                     gnome-tweaks gnome-themes-extra
+                    gnome-browser-connector
 
                     gnome-console
                     gnome-control-center
