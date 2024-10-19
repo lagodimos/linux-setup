@@ -40,7 +40,6 @@ case $DE in
     "gnome")
 
         flatpaks+=(
-            com.mattjakeman.ExtensionManager
             io.gitlab.news_flash.NewsFlash
             net.nokyan.Resources
             org.gnome.Fractal
